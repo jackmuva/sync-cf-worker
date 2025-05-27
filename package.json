@@ -1,0 +1,21 @@
+{
+	"name": "blue-sound-a20f",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.8.19",
+		"typescript": "^5.5.2",
+		"vitest": "~3.0.7",
+		"wrangler": "^4.17.0"
+	},
+	"dependencies": {
+		"@cloudflare/puppeteer": "^1.0.2"
+	}
+}
