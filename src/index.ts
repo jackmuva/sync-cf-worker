@@ -28,6 +28,9 @@ export default {
 		await page.goto(targetUrl.href);
 		const htmlPage = await page.content();
 
+		//TODO: get user from token in header
+		//if user doesnt exist, create a folder with their username
+
 		const key = targetUrl.hostname + "_" + Date.now() + ".html";
 		await env.SYNC_BUCKET.put(key, htmlPage);
 
