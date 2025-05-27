@@ -3,7 +3,7 @@ import puppeteer from "@cloudflare/puppeteer";
 // Define our environment bindings
 interface Env {
 	MY_BROWSER: any;
-	HTML_BUCKET: R2Bucket;
+	SYNC_BUCKET: R2Bucket;
 }
 
 // Define request body structure
@@ -29,7 +29,7 @@ export default {
 		const htmlPage = await page.content();
 
 		const key = targetUrl.hostname + "_" + Date.now() + ".html";
-		await env.HTML_BUCKET.put(key, htmlPage);
+		await env.SYNC_BUCKET.put(key, htmlPage);
 
 		await browser.close();
 
