@@ -6,7 +6,7 @@
 * use `npx wrangler deploy` to deploy to cloudflare worker
 * use this command to test
 ```
-curl -X POST https://sync-cf-worker.jack-mu.workers.dev \
+curl -X POST https://sync-cf-worker.<YOUR_DOMAIN>.workers.dev \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <TOKEN>" \
 -d '{"url": "https://developers.cloudflare.com/autorag/tutorial/brower-rendering-autorag-tutorial/"}'
