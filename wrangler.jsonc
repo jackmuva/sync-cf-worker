@@ -56,7 +56,7 @@
 	  ],
 	"vars": {
 		"SIGNING_KEY": "<YOUR_SIGNING_KEY>",
-		"MANAGED_SYNC_URL": "<MANAGED_SYNC_URL>",
+		"MANAGED_SYNC_API": "<URL_OF_MANAGED_SYNC_API>",
 	}
 
 }
