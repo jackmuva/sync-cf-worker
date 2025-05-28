@@ -7,5 +7,7 @@
 ```
 curl -X POST https://sync-cf-worker.jack-mu.workers.dev \
 -H "Content-Type: application/json" \
--d '{"url": "https://developers.cloudflare.com/autorag/tutorial/brower-rendering-autorag-tutorial/"}'
-```
+-H "Authorization: Bearer <TOKEN>" \
+-d '{"url": "https://developers.cloudflare.com/autorag/tutorial/brower-rendering-autorag-tutorial/"}'```
+* current `index.ts` is using a webscraping implementation while **managed sync** is being developed
+	* `sync-index.ts` can be used when **managed sync** is ready for testing

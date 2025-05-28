@@ -16,6 +16,7 @@
 		"wrangler": "^4.17.0"
 	},
 	"dependencies": {
-		"@cloudflare/puppeteer": "^1.0.2"
+		"@cloudflare/puppeteer": "^1.0.2",
+		"jsonwebtoken": "^9.0.2"
 	}
 }
