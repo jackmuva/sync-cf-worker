@@ -17,6 +17,7 @@
 	},
 	"dependencies": {
 		"@cloudflare/puppeteer": "^1.0.2",
+		"file-type": "^21.0.0",
 		"jsonwebtoken": "^9.0.2"
 	}
 }
