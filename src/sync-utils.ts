@@ -44,7 +44,7 @@ const indexRecordContent = async (user: string, env: Env, headers: Headers, sync
 	// FIX: will need to rework when we now the schema for the content that's returned
 	const content = await contentRequest.arrayBuffer();
 	const filetype = await fileTypeFromBuffer(content);
-	const key = user + "/" + recordId + "." + (filetype?.ext !== undefined ? filetype?.ext : "");
+	const key = user + "/" + recordId + (filetype?.ext !== undefined ? ("." + filetype?.ext) : "");
 	try {
 		const r2Object = await env.SYNC_BUCKET.put(key, content);
 		if (r2Object?.key) {
