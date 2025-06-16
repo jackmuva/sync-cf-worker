@@ -18,7 +18,11 @@ export default {
 				console.error("need sync id");
 				throw new Error("missing sync id");
 			}
-			const erroredRecords = await pullSyncedRecords(user, env, body, request.headers);
+			//HACK:using a hardcoded jwt for testing
+			//switch out for the commented code for more production implementation
+
+			//const erroredRecords = await pullSyncedRecords(user, env, body, request.headers);
+			const erroredRecords = await pullSyncedRecords(user, env, body, new Headers({ "Authorization": `Bearer ${env.MANAGED_SYNC_TESTING_JWT}` }));
 
 			return new Response(
 				JSON.stringify({

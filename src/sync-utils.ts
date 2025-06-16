@@ -39,11 +39,12 @@ const indexRecordContent = async (user: string, env: Env, headers: Headers, sync
 			method: "GET",
 			headers: headers,
 		});
+
 	// FIX: will need to rework when we now the schema for the content that's returned
-	const contentResponse = await contentRequest.json();
-	const key = user + "/" + recordId + ".txt";
+	const contentResponse = await contentRequest.arrayBuffer();
+	const key = user + "/" + recordId;
 	try {
-		const r2Object = await env.SYNC_BUCKET.put(key, contentResponse as string);
+		const r2Object = await env.SYNC_BUCKET.put(key, contentResponse);
 		if (r2Object?.key) {
 			return { success: true }
 		}

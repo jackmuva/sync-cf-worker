@@ -7,6 +7,7 @@ export interface Env {
 	SYNC_BUCKET: R2Bucket;
 	SIGNING_KEY: string;
 	MANAGED_SYNC_API: string;
+	MANAGED_SYNC_TESTING_JWT: string;
 }
 
 //TODO: have it this way for testing, but when managed sync is ready,
