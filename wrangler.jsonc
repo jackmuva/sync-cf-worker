@@ -54,4 +54,9 @@
 	      "bucket_name": "sync-bucket",
 	    },
 	  ],
+	"vars": {
+		"SIGNING_KEY": "<YOUR_SIGNING_KEY>",
+		"MANAGED_SYNC_API": "<URL_OF_MANAGED_SYNC_API>",
+	}
+
 }
