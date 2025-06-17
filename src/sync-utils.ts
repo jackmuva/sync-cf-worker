@@ -15,13 +15,13 @@ export const pullSyncedRecords = async (user: string, env: Env, body: RequestBod
 	let erroredRecords: Array<string> = []
 
 
-	const recordRequest = await fetch(env.MANAGED_SYNC_API + `/sync/${body.id}/records?pageSize=100&${cursor ? `cursor=${cursor}` : ""}`, {
+	const recordRequest = await fetch(env.MANAGED_SYNC_API + `/sync/${body.syncId}/records?pageSize=100&${cursor ? `cursor=${cursor}` : ""}`, {
 		method: "GET",
 		headers: headers,
 	});
 	const recordResponse: SyncedRecords = await recordRequest.json();
 	for (const data of recordResponse.data) {
-		const indexResponse = await indexRecordContent(user, env, headers, body.id!, data.id);
+		const indexResponse = await indexRecordContent(user, env, headers, body.syncId!, data.id);
 		if (!indexResponse.success && indexResponse.erroredRecord) {
 			erroredRecords.push(indexResponse.erroredRecord);
 		}

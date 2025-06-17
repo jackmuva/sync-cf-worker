@@ -14,7 +14,7 @@ export default {
 		const user = valid.user;
 		const body = (await request.json()) as RequestBody;
 		try {
-			if (!body.id) {
+			if (!body.syncId) {
 				console.error("need sync id");
 				throw new Error("missing sync id");
 			}
@@ -27,7 +27,7 @@ export default {
 			return new Response(
 				JSON.stringify({
 					success: true,
-					message: `synced records stored successfully for sync run : ${body.id}`,
+					message: `synced records stored successfully for sync run : ${body.syncId}`,
 					erroredRecords: erroredRecords,
 				}),
 				{
@@ -39,7 +39,7 @@ export default {
 			return new Response(
 				JSON.stringify({
 					success: false,
-					message: `unable to pull synced records for ${body.id}`,
+					message: `unable to pull synced records for ${body.syncId}`,
 				})
 			);
 		}

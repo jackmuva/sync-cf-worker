@@ -15,6 +15,7 @@ export interface Env {
 export interface RequestBody {
 	url: string
 	id?: string,
+	syncId?: string,
 	event?: string,
 	source?: string,
 	receivedAt?: Date,
